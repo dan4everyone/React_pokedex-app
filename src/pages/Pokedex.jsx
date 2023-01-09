@@ -58,7 +58,7 @@ const Pokedex = () => {
   }
 
   useEffect(() => {
-    const URL = `https://pokeapi.co/api/v2/pokemon/${pokemonType ? `type/${pokemonType}/` : 'pokemon/?limit=30'}`
+    const URL = `https://pokeapi.co/api/v2/${pokemonType ? `type/${pokemonType}/` : "pokemon/?limit=1154"}`
     console.log(URL)
     axios.get(URL)
       .then(res => {
