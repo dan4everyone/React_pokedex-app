@@ -22,7 +22,7 @@ const Pokedex = () => {
   }
 
   const handleChangeInput = (e) => {
-    setPokemonType(e.target.type)
+    setPokemonType(e.target.value)
   }
 
   const {lastPage, pagesInBlock, pokemonsInPage} = paginationLogic(currentPage, pokemonsFilter)
@@ -111,11 +111,11 @@ const Pokedex = () => {
         <li onClick={handlePreviousPage}>{'<'}</li>
         <li onClick={handleFirstPage}>...</li>
         {
-          pagesInBlock.map(pageInBlock => <li className={currentPage === pageInBlock ? 'actualPage' : ''} onClick={() => handleClickPage(pageInBlock)} key={pageInBlock}>{}</li>)
+          pagesInBlock.map(pageInBlock => <li className={currentPage === pageInBlock ? 'actualPage' : ''} onClick={() => handleClickPage(pageInBlock)} key={pageInBlock}>{pageInBlock}</li>)
         }
+        <li onClick={handleLastPage}>...</li>
+        <li onClick={handleNextPage}>{'>'}</li>
       </ul>
-      <li onClick={handleLastPage}>...</li>
-      <li onClick={handleNextPage}>{'>'}</li>
     </main>
   )
 }
